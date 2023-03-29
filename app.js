@@ -55,7 +55,6 @@ function game() {
         }
         console.log("Player points: " + player + ". Computer points: " + computer + ". Draw: " + draw + " times.")
     }
-    //console.log("Player points: " + player + ". Computer points: " + computer + ". Draw: " + draw + " times.");
 }
 
 game();
