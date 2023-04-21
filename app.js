@@ -3,7 +3,7 @@ const paperChoice = document.getElementById("paperBtn");
 const scissorsChoice = document.getElementById("scissorsBtn");
 const scoreboard = document.querySelector('.scoreboard');
 const div = document.createElement('div');
-
+const score = document.createElement('div');
 
 rockChoice.addEventListener('click', () => handleClick("rock"));
 paperChoice.addEventListener('click', () => handleClick("paper"));
@@ -14,7 +14,6 @@ function getComputerChoice() {
     return myArray[Math.floor(Math.random() * myArray.length)];
 }
 
-
 function handleClick(playerSelection) {
     const computerSelection = getComputerChoice();
     let result = playRound(playerSelection, computerSelection);
@@ -22,7 +21,6 @@ function handleClick(playerSelection) {
     div.textContent = result;
     scoreboard.appendChild(div);
 }
-
 
 function playRound(playerSelection, computerSelection) {
     let result = "";
@@ -63,7 +61,9 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let computer = 0;
     let player = 0;
-    let draw = 0;
+    score.classList.add('score');
+    score.textContent = player + " " + computer;
+    scoreboard.appendChild(score);
 }
 
 game();
