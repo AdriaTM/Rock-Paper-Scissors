@@ -1,0 +1,16 @@
+body {
+    background-color: #028090;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+    background-color: #05668d;
+    color: #f0f3bd;
+    height: 150px;
+
+}
