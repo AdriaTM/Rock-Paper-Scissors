@@ -1,5 +1,5 @@
 body {
-    background-color: #028090;
+    background-color: #0496ff;
     margin: 0;
 }
 
@@ -8,9 +8,29 @@ header {
     justify-content: center;
     align-items: center;
     font-family: 'Press Start 2P', cursive;
-    font-size: 28px;
-    background-color: #05668d;
-    color: #f0f3bd;
+    background-color: #006ba6;
     height: 150px;
+    font-size: 28px;
+}
 
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header,
+h2,
+div {
+    font-family: 'Press Start 2P', cursive;
+    color: #ffbc42;
+    padding: 0.5rem;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+div {
+    font-size: 18px;
 }
