@@ -8,6 +8,10 @@ const scoreboard = document.querySelector('.scoreboard');
 const div = document.createElement('div');
 const score = document.createElement('div');
 
+div.classList.add('result');
+div.textContent = "Let the battle begin!";
+scoreboard.appendChild(div);
+
 score.classList.add('score');
 score.textContent = "Player: " + player + " Computer: " + computer;
 scoreboard.appendChild(score);
@@ -30,10 +34,21 @@ function getComputerChoice() {
 
 function handleClick(playerSelection) {
     const computerSelection = getComputerChoice();
-    let result = playRound(playerSelection, computerSelection);
-    div.classList.add('result');
-    div.textContent = "PLAYER SELECTS: " + playerSelection + " COMPUTER SELECTS: " + computerSelection + " = " + result;
-    scoreboard.appendChild(div);
+    if (finished()) {
+        return;
+    }
+    else {
+        let result = playRound(playerSelection, computerSelection);
+        update(result);
+    }
+}
+
+function finished() {
+    if (computer === 5 || player === 5) return true;
+}
+
+function winnerScreen() {
+
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -54,4 +69,9 @@ function playRound(playerSelection, computerSelection) {
         result = 'COMPUTER WINS!';
     }
     return result;
+}
+
+function update(result) {
+    score.textContent = "Player: " + player + " Computer: " + computer;
+    div.textContent = result;
 }
