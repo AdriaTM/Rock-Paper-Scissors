@@ -5,6 +5,7 @@ const rockChoice = document.getElementById("rockBtn");
 const paperChoice = document.getElementById("paperBtn");
 const scissorsChoice = document.getElementById("scissorsBtn");
 const scoreboard = document.querySelector('.scoreboard');
+const win = document.querySelector('.winnerScreen');
 const div = document.createElement('div');
 const score = document.createElement('div');
 
@@ -33,22 +34,26 @@ function getComputerChoice() {
 }
 
 function handleClick(playerSelection) {
+    if (checkFinished()) return true;
     const computerSelection = getComputerChoice();
-    if (finished()) {
-        return;
-    }
-    else {
-        let result = playRound(playerSelection, computerSelection);
+    let result = playRound(playerSelection, computerSelection);
+    if (checkFinished()) {
         update(result);
+        return true;
     }
+    else update(result);
 }
 
-function finished() {
-    if (computer === 5 || player === 5) return true;
-}
-
-function winnerScreen() {
-
+function checkFinished() {
+    if (computer === 5) {
+        win.textContent = "COMPUTER WINS!!!";
+        return true;
+    }
+    else if (player === 5) {
+        win.textContent = "PLAYER WINS!!!";
+        return true;
+    }
+    return false;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -60,13 +65,13 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
         (playerSelection === 'SCISSORS' && computerSelection === 'PAPER')) {
         player++;
-        result = 'PLAYER WINS!';
+        result = 'PLAYER WINS THIS ROUND!';
     }
     if ((computerSelection === 'ROCK' && playerSelection === 'SCISSORS') ||
         (computerSelection === 'PAPER' && playerSelection === 'ROCK') ||
         (computerSelection === 'SCISSORS' && playerSelection === 'PAPER')) {
         computer++;
-        result = 'COMPUTER WINS!';
+        result = 'COMPUTER WINS THIS ROUND!';
     }
     return result;
 }
