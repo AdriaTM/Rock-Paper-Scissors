@@ -3,6 +3,29 @@ body {
     margin: 0;
 }
 
+button {
+    height: 160px;
+    width: 160px;
+    border-radius: 10px;
+    background-color: #8f2d56;
+    font-size: 84px;
+    text-align: center;
+    transition: background-color .3s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #d81159;
+}
+
+.buttons {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
 header {
     display: flex;
     justify-content: center;
