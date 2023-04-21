@@ -3,6 +3,21 @@ function getComputerChoice() {
     return myArray[Math.floor(Math.random() * myArray.length)];
 }
 
+const rockChoice = document.getElementById("rockBtn");
+const paperChoice = document.getElementById("paperBtn");
+const scissorsChoice = document.getElementById("scissorsBtn");
+
+
+rockChoice.addEventListener('click', () => handleClick("rock"));
+paperChoice.addEventListener('click', () => handleClick("paper"));
+scissorsChoice.addEventListener('click', () => handleClick("scissors"));
+
+function handleClick(playerSelection) {
+    const computerSelection = getComputerChoice();
+    let result = playRound(playerSelection, computerSelection);
+}
+
+
 function playRound(playerSelection, computerSelection) {
     let result = "";
     playerSelection = playerSelection.toLowerCase();
@@ -43,18 +58,6 @@ function game() {
     let computer = 0;
     let player = 0;
     let draw = 0;
-    for (let i = 0; i < 5; i++) {
-        let text = prompt("Select a choice(Rock, Paper, Scissors): ");
-        let computerSelection = getComputerChoice();
-        let result = playRound(text, computerSelection);
-        console.log(result);
-        if (result == "computer") computer++;
-        else if (result == "player") player++;
-        else {
-            draw++;
-        }
-        console.log("Player points: " + player + ". Computer points: " + computer + ". Draw: " + draw + " times.")
-    }
 }
 
 game();
