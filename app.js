@@ -70,7 +70,7 @@ function checkFinished() {
 function playRound(playerSelection, computerSelection) {
     let result = "";
     if (playerSelection === computerSelection) {
-        result = "IT'S A DRAW!";
+        result = "IT'S A TIE!";
     }
     if ((playerSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
         (playerSelection === 'PAPER' && computerSelection === 'ROCK') ||
