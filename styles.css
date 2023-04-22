@@ -1,10 +1,18 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006ba6;
+    height: 150px;
+}
+
 body {
     background-color: #0496ff;
     margin: 0;
 }
 
 div {
-    margin-top: 20px;
+    margin-top: 16px;
     font-size: 18px;
 }
 
@@ -43,28 +51,19 @@ div {
 }
 
 .buttons {
-    margin-top: 60px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .winnerScreen {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    font-size: 32px;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Press Start 2P', cursive;
-    background-color: #006ba6;
-    height: 150px;
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .scoreboard {
@@ -74,7 +73,7 @@ header {
     margin-top: 10px;
 }
 
-header,
+h1,
 h2,
 div {
     font-family: 'Press Start 2P', cursive;
@@ -84,4 +83,8 @@ div {
 
 h2 {
     font-size: 24px;
+}
+
+h1 {
+    font-size: 32px;
 }
