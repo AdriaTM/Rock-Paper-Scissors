@@ -4,6 +4,7 @@ let player = 0;
 const rockChoice = document.getElementById("rockBtn");
 const paperChoice = document.getElementById("paperBtn");
 const scissorsChoice = document.getElementById("scissorsBtn");
+const restart = document.getElementById("restartBtn");
 const scoreboard = document.querySelector('.scoreboard');
 const win = document.querySelector('.winnerScreen');
 const div = document.createElement('div');
@@ -20,6 +21,16 @@ scoreboard.appendChild(score);
 rockChoice.addEventListener('click', () => handleClick('ROCK'));
 paperChoice.addEventListener('click', () => handleClick('PAPER'));
 scissorsChoice.addEventListener('click', () => handleClick('SCISSORS'));
+restart.addEventListener('click', () => initial());
+
+
+function initial() {
+    computer = 0;
+    player = 0;
+    div.textContent = "Let the battle begin!";
+    score.textContent = "Player: " + player + " Computer: " + computer;
+    win.textContent = "WHO WILL WIN?";
+}
 
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3);
